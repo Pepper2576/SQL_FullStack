@@ -54,4 +54,4 @@ async function deleteEmployee(id) {
   }
 }
 
-export { getAllData, getDataById };
+export { getAllData, getDataById, deleteEmployee };
