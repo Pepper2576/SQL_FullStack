@@ -1,4 +1,3 @@
-import express from 'express';
 import {
   getAllEmployees,
   getEmployeeByID,
@@ -19,7 +18,7 @@ const getDataById = async (req, res) => {
   try {
     res.send(await getEmployeeByID(id)).status(200);
   } catch (error) {
-    req.json({ error: error.message }).status(400);
+    res.json({ error: error.message }).status(400);
   }
 };
 
