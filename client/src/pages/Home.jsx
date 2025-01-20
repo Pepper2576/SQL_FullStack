@@ -6,6 +6,8 @@ import CreateEmployee from '../components/CreateEmployee.jsx';
 import DeleteEmployee from '../components/DeleteEmployee.jsx';
 import EditEmployee from '../components/EditEmployee.jsx';
 import SearchById from '../components/SearchById.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Home = () => {
   const [allData, setAllData] = useState(null);
@@ -45,7 +47,11 @@ const Home = () => {
   return (
     <div>
       {loading ? (
-        <h4>Loading</h4>
+        <div className='d-flex justify-content-center'>
+          <div className='spinner-border text-primary' role='status'>
+            <span className='visually-hidden'>Loading...</span>
+          </div>
+        </div>
       ) : (
         <div className='tw-grid tw-grid-cols-5 tw-grid-rows-7 border border-red-500'>
           <div className='tw-col-span-1 tw-row-start-1 tw-row-end-7 tw-bg-slate-600 border border-green-500 tw-p-1'>

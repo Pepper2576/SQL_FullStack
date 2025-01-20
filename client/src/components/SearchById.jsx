@@ -22,24 +22,36 @@ const SearchById = ({ data }) => {
   return (
     <div>
       <h1>Search for employee by ID</h1>
-      <div className='tw-flex tw-flex-col tw-w-28 tw-p-5'>
-        <label htmlFor='singleEmployee'>Employee ID</label>
+      <div className='tw-flex tw-flex-col tw-w-36 tw-p-5'>
+        <label htmlFor='singleEmployee' className='tw-pb-2'>
+          Employee ID
+        </label>
         <input
-          className=''
+          className='tw-border-solid tw-border-2 tw-border-slate-700'
           type='number'
           value={employeeId}
           onChange={(e) => setEmployeeId(e.target.value)}
         />
-        <button type='button' className='btn btn-info' onClick={handleSearch}>
-          Search
-        </button>
-        <button
-          type='button'
-          class='btn btn-secondary'
-          onClick={showAllEmployees}
-        >
-          Show All
-        </button>
+        <div className='tw-flex tw-align-middle'>
+          <div className='tw-pt-2 tw-h-4 tw-w-24'>
+            <button
+              type='button'
+              className='btn btn-info'
+              onClick={handleSearch}
+            >
+              Search
+            </button>
+          </div>
+          <div className='tw-p-2 tw-h-4 tw-w-24'>
+            <button
+              type='button'
+              class='btn btn-secondary'
+              onClick={showAllEmployees}
+            >
+              Clear
+            </button>
+          </div>
+        </div>
       </div>
       <div className='tw-p-3'>
         {employeeData === null ? (
