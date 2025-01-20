@@ -5,6 +5,7 @@ import {
   getDataById,
   createNewData,
   deleteData,
+  updateData,
 } from './controllers/controllers.js';
 
 const app = express();
@@ -18,6 +19,8 @@ app.get('/:id', getDataById);
 app.post('/post', createNewData);
 
 app.delete('/delete/:id', deleteData);
+
+app.patch('/patch', updateData);
 
 app.listen(process.env.SERVER_PORT, () => {
   console.log(`Server running on ${process.env.SERVER_PORT}`);

@@ -3,6 +3,7 @@ import {
   getEmployeeByID,
   createEmployee,
   deleteEmployee,
+  updateEmployee,
 } from '../db.js';
 
 const getAllData = async (req, res) => {
@@ -46,4 +47,14 @@ const deleteData = async (req, res) => {
   }
 };
 
-export { getAllData, getDataById, createNewData, deleteData };
+const updateData = async (req, res) => {
+  const { column, newValue, id } = req.body;
+  try {
+    const update = await updateEmployee(column, newValue, id);
+    res.send(update).status(200);
+  } catch (error) {
+    res.json({ error: error.message }).status(400);
+  }
+};
+
+export { getAllData, getDataById, createNewData, deleteData, updateData };

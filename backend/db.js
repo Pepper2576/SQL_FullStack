@@ -32,8 +32,23 @@ async function createEmployee(id, firstName, lastName, adminRights) {
   return newEmployee;
 }
 
+async function updateEmployee(columnName, newValue, id) {
+  const update = await pool.query(`UPDATE employees SET ?? = ? where id = ?`, [
+    columnName,
+    newValue,
+    id,
+  ]);
+  return update;
+}
+
 async function deleteEmployee(id) {
   await pool.query(`DELETE FROM employees WHERE id = ?`, [id]);
 }
 
-export { getAllEmployees, getEmployeeByID, createEmployee, deleteEmployee };
+export {
+  getAllEmployees,
+  getEmployeeByID,
+  createEmployee,
+  deleteEmployee,
+  updateEmployee,
+};
