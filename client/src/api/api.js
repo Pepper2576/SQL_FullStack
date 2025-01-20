@@ -5,7 +5,7 @@ async function getAllData() {
     const results = await fetch(urlData.getData);
 
     if (!results.ok) {
-      throw new Error(`Data not fetched: ${response.statusText}`);
+      throw new Error(`Data not fetched`);
     }
 
     const data = await results.json();
@@ -21,7 +21,7 @@ async function getDataById(id) {
     const result = await fetch(`${urlData.getData}${id}`);
 
     if (!result.ok) {
-      throw new Error(`Data not fetched: ${response.statusText}`);
+      throw new Error(`Data not fetched`);
     }
 
     const data = await result.json();

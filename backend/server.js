@@ -1,5 +1,6 @@
 import express from 'express';
 import 'dotenv/config.js';
+import cors from 'cors';
 import {
   getAllData,
   getDataById,
@@ -10,6 +11,7 @@ import {
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/', getAllData);

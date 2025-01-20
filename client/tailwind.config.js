@@ -1,8 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,js}'],
+  prefix: 'tw-',
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+    './src/pages/**/*.{js,jsx,ts,tsx}',
+    './src/components/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
-    extend: {},
+    extend: {
+      xs: '480px',
+      sm: '640px',
+      md: '990px',
+      lg: '1024px',
+      xl: '1280px',
+      xxl: '1536px',
+      xxxl: '1600px',
+      huge: '2000px',
+    },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({});
+    },
+  ],
 };
