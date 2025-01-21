@@ -38,7 +38,7 @@ async function updateEmployee(columnName, newValue, id) {
     newValue,
     id,
   ]);
-  return update;
+  return true;
 }
 
 async function deleteEmployee(id) {
