@@ -68,8 +68,7 @@ async function createEmployee(newEmployee) {
       throw new Error('Error not created new employee');
     }
 
-    const data = await getAllData();
-    return data;
+    return true;
   } catch (error) {
     console.log(`Error: ${error}`);
   }

@@ -47,9 +47,11 @@ const Home = () => {
   return (
     <div>
       {loading ? (
-        <div className='d-flex justify-content-center'>
-          <div className='spinner-border text-primary' role='status'>
-            <span className='visually-hidden'>Loading...</span>
+        <div className='tw-mt-28'>
+          <div className='d-flex justify-content-center '>
+            <div className='spinner-border text-primary' role='status'>
+              <span className='visually-hidden'>Loading...</span>
+            </div>
           </div>
         </div>
       ) : (
@@ -57,7 +59,7 @@ const Home = () => {
           <div className='tw-col-span-1 tw-row-start-1 tw-row-end-7 tw-bg-slate-600 border border-green-500 tw-p-1'>
             <SelectionPain onSelectionChange={onSelectionChange} />
           </div>
-          <div className='tw-col-start-2 tw-col-end-6 border border-blue-500 tw-p-1'>
+          <div className='tw-col-start-2 tw-col-end-6 tw-row-start-1 tw-row-end-7 border border-blue-500 tw-p-1'>
             {renderElement()}
           </div>
         </div>
