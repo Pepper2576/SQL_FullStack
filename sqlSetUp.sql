@@ -9,6 +9,6 @@ create table employees (
     admin_rights tinyint
 	);
     
-    insert into employees value (1, "Hello", "World", 1);
+insert into employees value (1, "Hello", "World", 1);
     
-    select * from employees;
+select * from employees;
