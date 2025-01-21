@@ -47,8 +47,7 @@ async function deleteEmployee(id) {
       );
     }
 
-    const data = await getAllData();
-    return data;
+    return true;
   } catch (error) {
     console.error('Error deleting employee:', error);
   }
@@ -88,8 +87,7 @@ async function updateEmployee(update) {
       throw new Error('Error not updated employee');
     }
 
-    const data = await getAllData();
-    return data;
+    return true;
   } catch (error) {
     console.log(`Error: ${error}`);
   }
